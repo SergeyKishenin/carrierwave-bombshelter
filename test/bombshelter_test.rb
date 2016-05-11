@@ -15,6 +15,10 @@ class TestBombShelter < Minitest::Test
     def max_pixel_dimensions
       [5, 5]
     end
+
+    def image_type_whitelist
+      ["jpg", :jpeg, :gif, "png"]
+    end
   end
 
   def fixture_file(name)

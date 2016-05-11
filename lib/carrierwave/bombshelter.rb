@@ -39,7 +39,7 @@ module CarrierWave
     end
 
     def check_image_type!(image)
-      return if image.type && image_type_whitelist.include?(image.type)
+      return if image.type && image_type_whitelist.map(&:to_sym).include?(image.type)
       raise CarrierWave::IntegrityError,
             I18n.translate(:'errors.messages.unsupported_image_type')
     end
